@@ -307,3 +307,9 @@ MIT License
 - Unreal Engine 5 Python API
 - Blender Python API（`bpy`）
 - 参考模型：StoneGolem
+
+🚧 Known Issues & Roadmap (已知问题与路线图)
+☑ 资产自动解压、减面、LOD生成全流程闭环。
+☑ 预设材质（白模/暗黑金属）自动打光与多角度渲染。
+□ TODO: 复杂 PBR 材质的自动化通道识别与 sRGB 智能对齐（目前在复杂模型上偶发材质变灰，正在重构节点逻辑）。
+□ TODO: UE5 动态材质切换（目前主要依赖预设，动态切换的性能与内存管理待优化）
