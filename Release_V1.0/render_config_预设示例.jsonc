@@ -1,0 +1,162 @@
+// ============================================================================
+//  render_config.json —— HDRI 预设 + 风格捆绑 配置示例
+// ============================================================================
+//
+//  【核心概念】
+//    hdri_preset  : 填 HDRI 文件名（不含扩展名），程序自动搜索
+//    preset.active: 选一个风格预设，自动套用 材质 + HDRI + 曝光 + 灯光
+//
+//  【HDRI 素材库】
+//    把下载的 .hdr / .exr 放进这个目录（可分子目录）：
+//      ...\ue5_render_studio\hdri\Studio\   ← 摄影棚
+//      ...\ue5_render_studio\hdri\Sunset\   ← 夕阳
+//      ...\ue5_render_studio\hdri\Cyber\    ← 赛博夜景
+//      ...\ue5_render_studio\hdri\Dark\     ← 暗调废墟
+//
+//    程序会递归搜索所有子目录，按文件名模糊匹配。
+//    例如 hdri_preset 填 "sunset"，能找到 "sunset_dock_4k.hdr"。
+//    多个候选时自动选文件最大的（画质最高）。
+//
+// ============================================================================
+
+{
+  // ---------------------------------------------------------------------------
+  //  当前启用的风格预设
+  //    留空 ""          → 不启用，用下面 hdri / model 的独立配置
+  //    "Mech_DarkMetal" → 暗黑金属 + 摄影棚
+  //    "Sunset_Biological" → 粗糙皮肤 + 夕阳
+  //    "Cyber_Emissive" → 发光材质 + 赛博夜景
+  //    "Ruins_Dark"     → 暗金属 + 暗调废墟
+  // ---------------------------------------------------------------------------
+  "preset": {
+    "active": "Mech_DarkMetal"
+  },
+
+  // ---------------------------------------------------------------------------
+  //  预设定义（每个预设捆绑一套完整的视觉方案）
+  //    material_mode   : texture / dark_metal / rough_skin / emissive
+  //    hdri_preset     : 对应 HDRI 文件名关键字
+  //    hdri_intensity  : 环境光强度
+  //    exposure_ev     : 曝光
+  //    lights          : 三灯强度与颜色
+  //    base_color      : 纯色模式的基底色（texture 模式忽略）
+  // ---------------------------------------------------------------------------
+  "presets": {
+    "Mech_DarkMetal": {
+      "material_mode": "dark_metal",
+      "hdri_preset": "studio_kontrast",
+      "hdri_intensity": 1.5,
+      "exposure_ev": -3.0,
+      "lights": {
+        "key":  { "intensity": 60.0, "color": [200, 215, 255] },
+        "fill": { "intensity": 25.0, "color": [255, 225, 195] },
+        "top":  { "intensity": 30.0, "color": [235, 240, 255] }
+      },
+      "base_color": [0.10, 0.08, 0.05]
+    },
+
+    "Sunset_Biological": {
+      "material_mode": "rough_skin",
+      "hdri_preset": "sunset",
+      "hdri_intensity": 1.8,
+      "exposure_ev": -1.8,
+      "lights": {
+        "key":  { "intensity": 80.0, "color": [255, 190, 140] },
+        "fill": { "intensity": 30.0, "color": [180, 200, 255] },
+        "top":  { "intensity": 20.0, "color": [255, 220, 180] }
+      },
+      "base_color": [0.22, 0.16, 0.12]
+    },
+
+    "Cyber_Emissive": {
+      "material_mode": "emissive",
+      "hdri_preset": "cyberpunk",
+      "hdri_intensity": 0.8,
+      "exposure_ev": -2.5,
+      "lights": {
+        "key":  { "intensity": 40.0, "color": [120, 200, 255] },
+        "fill": { "intensity": 45.0, "color": [255, 80, 200] },
+        "top":  { "intensity": 15.0, "color": [100, 255, 220] }
+      },
+      "base_color": [0.03, 0.05, 0.08]
+    },
+
+    "Ruins_Dark": {
+      "material_mode": "dark_metal",
+      "hdri_preset": "ruins",
+      "hdri_intensity": 0.6,
+      "exposure_ev": -2.0,
+      "lights": {
+        "key":  { "intensity": 35.0, "color": [190, 180, 200] },
+        "fill": { "intensity": 12.0, "color": [255, 200, 150] },
+        "top":  { "intensity": 10.0, "color": [200, 200, 220] }
+      },
+      "base_color": [0.08, 0.07, 0.06]
+    }
+  },
+
+  // ---------------------------------------------------------------------------
+  //  HDRI 配置
+  // ---------------------------------------------------------------------------
+  "hdri": {
+    // 素材库根目录（程序递归搜索）
+    "hdri_dir": "D:/YourWorkspace/hdri",
+
+    // 想指定某张 HDRI 时填这里（不含扩展名，支持模糊匹配）
+    // 留空则用 preset 里的 hdri_preset，再退回 path
+    "hdri_preset": "",
+
+    // 兜底完整路径（hdri_preset 找不到时使用）
+    "path": "D:/YourWorkspace/Downloads/studio_kontrast_04_4k.hdr",
+
+    "hdri_intensity": 1.5,
+    "indirect_lighting_intensity": 1.0,
+    "source_cubemap_angle": 90.0,
+    "lower_hemisphere_is_black": false,
+    "hide_background": true
+  },
+
+  // ---------------------------------------------------------------------------
+  //  材质模式（preset 未启用时生效）
+  // ---------------------------------------------------------------------------
+  "model": {
+    "material_mode": "texture",
+    // texture    用 Blender 导出的 Albedo 贴图
+    // dark_metal 暗金属纯色
+    // rough_skin 粗糙皮肤/岩石
+    // emissive   发光
+
+    "custom_basecolor": [0.1, 0.08, 0.05],
+    "use_custom_basecolor": false,
+    "debug_red_basecolor": false,
+
+    "rotation_yaw": 0.0,
+    "scale": 1.0,
+    "force_lod0": true,
+    "apply_smooth": true
+  }
+}
+
+// ============================================================================
+//  【快速上手】
+//
+//  1) 把 4 张 HDRI 放进对应目录：
+//       hdri\Studio\  ← 摄影棚（如 studio_kontrast_04_4k.hdr）
+//       hdri\Sunset\  ← 夕阳（如 sunset_dock_4k.hdr）
+//       hdri\Cyber\   ← 赛博夜景（如 cyberpunk_street_4k.hdr）
+//       hdri\Dark\    ← 暗调废墟（如 abandoned_ruins_4k.hdr）
+//
+//  2) 改 "preset": { "active": "Sunset_Biological" }
+//     程序会自动：
+//       · 用 rough_skin 材质模式
+//       · 在 hdri 目录里搜 "sunset" 关键字 → 加载对应的 .hdr
+//       · 套用 preset 里的曝光 -1.8 和暖色灯光
+//
+//  3) 或者不启用 preset，单独控制：
+//       "model": { "material_mode": "emissive" }
+//       "hdri":  { "hdri_preset": "cyberpunk" }
+//
+//  【找不到文件时】
+//    hdri_preset 匹配失败 → 退回 hdri.path
+//    path 也不存在       → 用纯色环境光（不崩溃，只是没 HDRI 反射）
+// ============================================================================
