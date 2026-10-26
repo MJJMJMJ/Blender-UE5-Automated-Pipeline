@@ -111,11 +111,11 @@
 
 ### 主界面
 
-![主界面](docs/images/gui_main.png)
+![主界面](docs/images/gui_main.jpg)
 
 ### 收件箱扫描
 
-![收件箱扫描](docs/images/inbox_scan.png)
+![收件箱扫描](docs/images/inbox_scan.jpg)
 
 ### 渲染成品
 
