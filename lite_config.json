@@ -1,0 +1,32 @@
+{
+  "_说明": "Lite 版配置。完整版提供更精细的渲染参数。",
+  "blender_exe": "D:\\blender.exe",
+  "output": {
+    "width": 1440,
+    "height": 1080
+  },
+  "camera": {
+    "fov": 50.0,
+    "distance_factor": 3.0,
+    "angles": [
+      90,
+      135,
+      180,
+      270
+    ]
+  },
+  "exposure": {
+    "ev": -1.0
+  },
+  "lights": {
+    "intensity": 60.0
+  },
+  "lod": {
+    "ratios": [
+      0.5,
+      0.25,
+      0.1
+    ],
+    "min_verts": 100
+  }
+}

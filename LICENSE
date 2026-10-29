@@ -1,0 +1,119 @@
+个人学习与商业限制许可声明
+Personal Learning & Commercial Restriction License
+Version 1.0
+Copyright (c) 2026 MJMJMJ. All Rights Reserved.
+
+================================================================================
+【中文版】
+================================================================================
+
+一、授权范围
+
+本许可授予任何个人一项非独占、不可转让、不可再许可的有限权利：
+  - 下载、阅读、编译、运行本项目源代码及相关文档；
+  - 出于个人学习、技术研究、教学演示、非商业性开源贡献的目的
+    修改源代码，并在个人环境中使用修改后的版本。
+
+二、商业限制（核心条款）
+
+未经版权持有人 MJMJMJ 事先书面授权，严禁将本项目及其任何衍生物
+（包括但不限于：修改版、二次开发版、集成本项目代码的其他软件、
+基于本项目搭建的在线服务）用于以下任何用途：
+
+  - 商业接单。包括以本工具或其产出物向第三方提供付费服务，
+    如在任何电商平台、接单平台、社交媒体承接 3D 渲染、资产处理
+    等付费业务；
+  - 企业部署。包括在营利性组织内部署、集成、使用本项目开展
+    经营活动或生产流程；
+  - 打包售卖。包括直接出售本项目源代码、可执行文件、安装包，
+    或将本项目代码整体、部分嵌入商业软件后进行销售、出租、
+    订阅收费、按次收费；
+  - 商业竞品。包括使用本项目全部或部分源代码，开发与本项目
+    功能实质相同或高度相似的竞争性产品。
+
+三、署名义务
+
+在任何允许的使用场景中，必须完整保留本许可文件及源代码中的
+版权声明、作者署名，不得删除、修改或隐匿。
+
+四、无担保声明
+
+本项目按「现状」提供，不附带任何明示或默示的担保，包括但不限于
+适销性、特定用途适用性和非侵权保证。在任何情况下，作者均不对
+因使用本项目而产生的任何直接、间接、偶然、特殊或后果性损害
+承担责任。
+
+五、许可终止
+
+任何违反上述条款的行为，将自动终止本许可授予的全部权利，
+且无需另行通知。许可终止后，使用者必须立即停止使用并销毁
+本项目及其衍生物的全部副本。
+
+六、商业授权
+
+如需商业使用，请联系版权持有人 MJMJMJ 获取书面商业授权。
+商业授权不受本许可限制。
+
+================================================================================
+【ENGLISH VERSION】
+================================================================================
+
+1. GRANT OF LICENSE
+
+Subject to the terms of this License, the Copyright Holder grants any
+individual a limited, non-exclusive, non-transferable, non-sublicensable
+right to:
+  - download, read, compile, and run the source code and documentation;
+  - modify the source code for personal study, technical research,
+    educational demonstration, or non-commercial open-source contribution,
+    and use the modified version within a personal environment.
+
+2. COMMERCIAL RESTRICTIONS
+
+Without prior written authorization from the Copyright Holder (MJMJMJ),
+it is strictly prohibited to use this project or any derivative work
+thereof (including but not limited to modified versions, secondary
+developments, software integrating this code, and online services
+built upon this project) for any of the following:
+
+  - COMMERCIAL FREELANCE SERVICES. Providing paid services to third
+    parties using this tool or its outputs, including 3D rendering
+    or asset-processing services offered on any e-commerce platform,
+    freelance platform, or social media.
+  - ENTERPRISE DEPLOYMENT. Deploying, integrating, or using this
+    project within a for-profit organization for business operations
+    or production pipelines.
+  - PACKAGING AND RESALE. Selling the source code, executable files,
+    or installers; embedding this code, in whole or in part, into
+    commercial software for sale, rental, subscription, or per-use
+    charging.
+  - COMMERCIAL COMPETITORS. Developing products with substantially
+    similar functionality using this source code, in whole or in part.
+
+3. ATTRIBUTION
+
+In any permitted use, this License file and all copyright notices and
+author attributions in the source code must be retained in full and
+must not be removed, modified, or obscured.
+
+4. DISCLAIMER OF WARRANTY
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES ARISING FROM THE USE OF
+THIS SOFTWARE.
+
+5. TERMINATION
+
+Any violation of these terms automatically terminates all rights
+granted under this License without further notice. Upon termination,
+the user must immediately cease use of and destroy all copies of this
+project and its derivative works.
+
+6. COMMERCIAL LICENSING
+
+For commercial use, please contact the Copyright Holder (MJMJMJ) to
+obtain written commercial authorization, which is not subject to the
+restrictions of this License.
